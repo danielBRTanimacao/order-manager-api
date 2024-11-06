@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>URLS DISPONIVEIS</h1>
+    <ul>
+        <li>
+            Encomendas: <a href="#">http://127.0.0.1:8000/api/orders</a>
+        </li>
+        <li>
+            Adicionar encomenda: <a href="#">http://127.0.0.1:8000/api/orders</a>
+        </li>
+        <li>
+            Update encomenda: <a href="#">http://127.0.0.1:8000/api/order/ADD-ID</a>
+        </li>
+        <li>
+            Excluir encomenda: <a href="#">http://127.0.0.1:8000/api/order/ADD-ID</a>
+        </li>
+    </ul>
+</body>
+</html>
