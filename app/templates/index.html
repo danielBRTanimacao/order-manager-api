@@ -3,22 +3,25 @@
     <h1>URLS DISPONIVEIS API</h1>
     <ul>
         <li>
-            Encomendas: <a href="#">http://127.0.0.1:8000/api/orders</a>
+            Encomendas GET: <a href="/api/orders/">http://127.0.0.1:8000/api/orders</a>
         </li>
         <li>
-            Adicionar encomenda: <a href="#">http://127.0.0.1:8000/api/orders</a>
+            Limite encomendas GET: <a href="/api/orders/">http://127.0.0.1:8000/api/orders/?q=QUANTIDADE-INT</a>
         </li>
         <li>
-            Update encomenda: <a href="#">http://127.0.0.1:8000/api/order/ADD-ID</a>
+            Adicionar encomenda POST: <a href="#">http://127.0.0.1:8000/api/orders</a>
         </li>
         <li>
-            Excluir encomenda: <a href="#">http://127.0.0.1:8000/api/order/ADD-ID</a>
+            Update encomenda PUT: <a href="#">http://127.0.0.1:8000/api/order/ADD-ID</a>
+        </li>
+        <li>
+            Excluir encomenda DELETE: <a href="">http://127.0.0.1:8000/api/order/ADD-ID</a>
         </li>
     </ul>
     <h1>URLS DISPONIVEIS VIEW</h1>
     <ul>
         <li>
-            Adicionar <a href="">http://127.0.0.1:8000/orders</a>
+            Adicionar <a href={% url "orders" %}>http://127.0.0.1:8000/orders</a>
         </li>
     </ul>
 {% endblock content %}
