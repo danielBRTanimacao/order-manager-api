@@ -10,8 +10,17 @@
                     "Helvetica Neue", sans-serif;
                 margin: 0;
                 padding: 0;
+                list-style: none;
+            }
+            body {
+                background-color: rgb(11, 11, 96);
+            }
+            main {
+                height: 100dvh;
+                background-color: white;
             }
             header,
+            nav,
             footer {
                 height: 50dvh;
                 display: flex;
@@ -19,39 +28,40 @@
                 justify-content: space-around;
                 color: white;
             }
+            nav,
             footer {
                 height: 12dvh;
                 justify-content: space-between;
-                padding: 10px;
             }
-            footer a {
+            nav a {
                 text-decoration: none;
                 font-size: 1.5rem;
                 font-weight: 800;
+                color: white;
             }
-            .dp-1 {
+            .container {
+                padding: 0 20px;
+            }
+            .title-principal {
                 font-size: 4rem;
             }
-            main {
-                height: 100dvh;
-                background-color: white;
-                padding: 10px;
-            }
-            body {
-                background-color: rgb(11, 11, 96);
-            }
-            ul {
-                padding: 0;
-                margin: 0;
+            .p-big {
+                font-size: large;
             }
         </style>
         <title>URLS DISPONIVEIS</title>
     </head>
     <body>
+        <nav class="container">
+            <a href="/">API</a>
+            <div id="google_translate_element"></div>
+        </nav>
         <header>
             <div>
-                <h1 class="dp-1">API ENCOMENDAS</h1>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <h1 class="title-principal">API ENCOMENDAS</h1>
+                <p style="font-weight: 300">
+                    API publica para gerenciamento de encomendas
+                </p>
             </div>
             <img
                 src="https://github.com/danielBRTanimacao/order-manager-api/blob/main/img-project/img-project.png?raw=true"
@@ -59,7 +69,48 @@
                 alt="#"
             />
         </header>
-        <main>
+        <main class="container">
+            <div
+                style="
+                    height: 50dvh;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                "
+            >
+                <h1 class="title-principal" style="font-weight: 400">
+                    Sobre a api
+                </h1>
+                <p class="p-big">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Corporis fugiat, soluta expedita repellat id perferendis
+                    asperiores aperiam. Rem reiciendis maxime optio eaque
+                    dignissimos neque, corrupti numquam. Libero ex excepturi
+                    rem.
+                </p>
+            </div>
+            <article style="display: flex">
+                <div>
+                    <h2>Exemplos</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Fuga odio consequuntur, corrupti sint quibusdam sed
+                        neque ad eligendi quidem molestias architecto illum
+                        iste, dignissimos nesciunt explicabo molestiae dolorum
+                        omnis beatae?
+                    </p>
+                </div>
+                <div>
+                    <h2>Como usar</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Fuga odio consequuntur, corrupti sint quibusdam sed
+                        neque ad eligendi quidem molestias architecto illum
+                        iste, dignissimos nesciunt explicabo molestiae dolorum
+                        omnis beatae?
+                    </p>
+                </div>
+            </article>
             <h1>URLS DISPONIVEIS API</h1>
             <ul>
                 <li>
@@ -81,18 +132,15 @@
                 </li>
                 <li>
                     Update encomenda PUT:
-                    <a href="#">http://127.0.0.1:8000/api/order/ADD-ID</a>
+                    <a href="#">http://127.0.0.1:8000/api/order/1</a>
                 </li>
                 <li>
                     Excluir encomenda DELETE:
-                    <a href="">http://127.0.0.1:8000/api/order/ADD-ID</a>
+                    <a href="">http://127.0.0.1:8000/api/order/1</a>
                 </li>
             </ul>
         </main>
-        <footer>
-            <a href="/">API</a>
-            <div id="google_translate_element"></div>
-        </footer>
+        <footer class="container">footer</footer>
         <script type="text/javascript">
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement(
