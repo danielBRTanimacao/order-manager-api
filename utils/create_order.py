@@ -3,19 +3,17 @@ import sys
 from random import randint
 from pathlib import Path
 from random import choice
-# Arquivos contem nomes e valores produtos
 
-from list_products import products, values_products
-# Importando modulos principais e acessando objetos django 
-
+from list_products import products, values_products # listas para ser adicionada
+ 
 import django
 from django.conf import settings
 
 DJANGO_BASE_DIR = Path(__file__).parent.parent
-NUMBER_OF_OBJECTS = 100 # numero de objetos para ser criado
+NUMBER_OF_OBJECTS = 100 # numero de objetos ser criado
 
 sys.path.append(str(DJANGO_BASE_DIR))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'core.settings' # 'core' base do projeto pode ser modificado
+os.environ['DJANGO_SETTINGS_MODULE'] = 'core.settings' # substitua o 'core' base do projeto pode ser modificado
 settings.USE_TZ = False
 
 django.setup()
@@ -23,9 +21,8 @@ django.setup()
 if __name__ == '__main__':
     import faker
 
-    from orders.models import Order # importando model para inserir dados
+    from orders.models import Order # importe seu model para inserir dados
 
-    # deleta todos os objetos
     Order.objects.all().delete()
 
     fake = faker.Faker('pt_BR')
