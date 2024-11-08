@@ -1,107 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <style>
-            * {
-                font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-                    "Helvetica Neue", sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-            ul {
-                list-style: none;
-            }
-            body {
-                background-color: rgb(11, 11, 96);
-            }
-            main {
-                background-color: white;
-                padding: 0 20px 20px 20px !important;
-            }
-            header,
-            nav,
-            footer {
-                height: 50dvh;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                color: white;
-            }
-            nav,
-            footer {
-                height: 12dvh;
-                justify-content: space-between;
-            }
-            nav a {
-                text-decoration: none;
-                font-size: 1.5rem;
-                font-weight: 800;
-                color: white;
-            }
-            hr {
-                margin: 20px;
-            }
-            li {
-                padding: 15px 0 0 0;
-            }
-            .container {
-                padding: 0 20px;
-            }
-            .title-principal {
-                font-size: 4rem;
-            }
-            .p-big {
-                font-size: large;
-            }
-            .img-principal {
-                width: 600px;
-            }
-            .common-ul {
-                list-style: inside;
-            }
-            .common-ul li {
-                padding-top: 5px;
-            }
-            .div-about {
-                padding-right: 10px;
-                width: 65%;
-            }
-            .special-a li a {
-                background-color: rgb(182, 182, 182);
-                padding: 4px 6px;
-                border-radius: 5px;
-                text-decoration: none;
-            }
-            .special-a li a span {
-                font-weight: 600;
-                background-color: rgb(11, 94, 11);
-                padding: 0 4px;
-                color: white;
-                border-radius: 5px;
-                font-size: small;
-            }
-            @media (max-width: 1199.98px) {
-                .img-principal {
-                    width: 400px;
-                }
-            }
-            @media (max-width: 991.98px) {
-                .img-principal {
-                    width: 300px;
-                }
-                header {
-                    flex-direction: column;
-                }
-            }
-            @media (max-width: 767.98px) {
-                .title-principal {
-                    font-size: 2rem;
-                }
-            }
-        </style>
+        <link rel="stylesheet" href="{% static "css/index.css" %}">
+        <link rel="shortcut icon" href="{% static "svg/icon.svg" %}" type="image/x-icon" />
         <title data-lang-pt="URLS DISPONIVEIS" data-lang-en="AVAILABLE URLS">
             URLS DISPONIVEIS
         </title>
@@ -111,14 +15,18 @@
             <a href="/">API</a>
             <select name="choose" id="changeLanguage">
                 <option
-                    data-lang-pt="Português"
-                    data-lang-en="Portuguese"
+                    data-lang-pt="🇧🇷 Português"
+                    data-lang-en="🇧🇷 Portuguese"
                     value="pt"
                 >
-                    Português
+                    🇧🇷 Português
                 </option>
-                <option value="en" data-lang-pt="Inglês" data-lang-en="English">
-                    Inglês
+                <option
+                    value="en"
+                    data-lang-pt="🇺🇸 Inglês"
+                    data-lang-en="🇺🇸 English"
+                >
+                    🇺🇸 Inglês
                 </option>
             </select>
         </nav>
@@ -183,7 +91,7 @@
                     administrativos.
                 </p>
             </div>
-            <article style="display: flex; padding: 12px 0 50px 0">
+            <article class="article">
                 <div class="div-about">
                     <h2
                         data-lang-en="
@@ -327,9 +235,12 @@
                     <span data-lang-pt="Encomendas:" data-lang-en="Orders:"
                         >Encomendas:</span
                     >
-                    <a href="/api/orders/"
-                        ><span>GET</span> http://127.0.0.1:8000/api/orders</a
+                    <div
+                        onclick='copy("{{request.scheme}}://{{request.get_host}}/api/orders")'
                     >
+                        <span>GET</span>
+                        {{request.scheme}}://{{request.get_host}}/api/orders
+                    </div>
                 </li>
                 <li>
                     <span
@@ -337,10 +248,12 @@
                         data-lang-en="Order limit:"
                         >Limite encomendas:</span
                     >
-                    <a href="/api/orders/?q=5"
-                        ><span>GET</span>
-                        http://127.0.0.1:8000/api/orders/?q={number}</a
+                    <div
+                        onclick='copy("{{request.scheme}}://{{request.get_host}}/api/orders/?q={number}")'
                     >
+                        <span>GET</span>
+                        {{request.scheme}}://{{request.get_host}}/api/orders/?q={number}
+                    </div>
                 </li>
             </ul>
             <hr />
@@ -357,12 +270,14 @@
                         data-lang-en="Add order:"
                         >Adicionar encomenda:</span
                     >
-                    <a href="#"
-                        ><span style="background-color: rgb(142, 102, 29)"
+                    <div
+                        onclick='copy("{{request.scheme}}://{{request.get_host}}/api/orders")'
+                    >
+                        <span style="background-color: rgb(142, 102, 29)"
                             >POST</span
                         >
-                        http://127.0.0.1:8000/api/orders</a
-                    >
+                        {{request.scheme}}://{{request.get_host}}/api/orders
+                    </div>
                 </li>
                 <li>
                     <span
@@ -370,12 +285,14 @@
                         data-lang-pt="Update encomenda:"
                         >Update encomenda:</span
                     >
-                    <a href="#"
-                        ><span style="background-color: rgb(0, 153, 153)"
+                    <div
+                        onclick='copy("{{request.scheme}}://{{request.get_host}}/api/order/{id}")'
+                    >
+                        <span style="background-color: rgb(0, 153, 153)"
                             >PUT</span
                         >
-                        http://127.0.0.1:8000/api/order/{id}</a
-                    >
+                        {{request.scheme}}://{{request.get_host}}/api/order/{id}
+                    </div>
                 </li>
                 <li>
                     <span
@@ -383,10 +300,12 @@
                         data-lang-en="Delete order"
                         >Excluir encomenda:</span
                     >
-                    <a href=""
-                        ><span style="background-color: red">DELETE</span>
-                        http://127.0.0.1:8000/api/order/{id}</a
+                    <div
+                        onclick='copy("{{request.scheme}}://{{request.get_host}}/api/order/{id}")'
                     >
+                        <span style="background-color: red">DELETE</span>
+                        {{request.scheme}}://{{request.get_host}}/api/order/{id}
+                    </div>
                 </li>
             </ul>
         </main>
@@ -396,24 +315,18 @@
                     Documentação API
                 </h1>
                 <div>
-                    <img src="aoba" alt="img-logo" />
+                    <img src="{% static "svg/icon.svg" %}" alt="img-logo" width="100" />
                 </div>
             </div>
         </footer>
-        <script>
-            const languageSelect = document.getElementById("changeLanguage");
-
-            languageSelect.addEventListener("change", (event) => {
-                const selectedLanguage = event.target.value;
-
-                document
-                    .querySelectorAll("[data-lang-pt]")
-                    .forEach((element) => {
-                        element.textContent = element.getAttribute(
-                            `data-lang-${selectedLanguage}`
-                        );
-                    });
-            });
-        </script>
+        <div
+            class="hidde-float hidden"
+            id="hiddeText"
+            data-lang-pt="texto copiado com sucesso!"
+            data-lang-en="text copied successfully!"
+        >
+            texto copiado com sucesso!
+        </div>
+        <script src="{% static "js/index.js" %}"></script>
     </body>
 </html>
