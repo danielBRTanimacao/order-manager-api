@@ -10,6 +10,8 @@
                     "Helvetica Neue", sans-serif;
                 margin: 0;
                 padding: 0;
+            }
+            ul {
                 list-style: none;
             }
             body {
@@ -43,7 +45,7 @@
                 margin: 20px;
             }
             li {
-                padding: 8px 0 0 0;
+                padding: 15px 0 0 0;
             }
             .container {
                 padding: 0 20px;
@@ -56,6 +58,29 @@
             }
             .img-principal {
                 width: 600px;
+            }
+            .common-ul {
+                list-style: inside;
+            }
+            .common-ul li {
+                padding-top: 5px;
+            }
+            .div-about {
+                padding-right: 10px;
+                width: 65%;
+            }
+            .special-a li a {
+                background-color: rgb(182, 182, 182);
+                padding: 4px 6px;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+            .special-a li a span {
+                background-color: rgb(11, 94, 11);
+                padding: 0 4px;
+                color: white;
+                border-radius: 5px;
+                font-size: small;
             }
             @media (max-width: 1199.98px) {
                 .img-principal {
@@ -76,7 +101,9 @@
                 }
             }
         </style>
-        <title>URLS DISPONIVEIS</title>
+        <title data-lang-pt="URLS DISPONIVEIS" data-lang-en="AVAILABLE URLS">
+            URLS DISPONIVEIS
+        </title>
     </head>
     <body>
         <nav class="container">
@@ -96,9 +123,19 @@
         </nav>
         <header>
             <div>
-                <h1 class="title-principal">API ENCOMENDAS</h1>
-                <p style="font-weight: 300">
-                    API publica para gerenciamento de encomendas
+                <h1
+                    class="title-principal"
+                    data-lang-pt="API ENCOMENDAS"
+                    data-lang-en="ORDERS API"
+                >
+                    API ENCOMENDAS
+                </h1>
+                <p
+                    style="font-weight: 300"
+                    data-lang-pt="API pública para o gerenciamento de encomendas"
+                    data-lang-en="Public API for order management"
+                >
+                    API pública para o gerenciamento de encomendas
                 </p>
             </div>
             <img
@@ -110,72 +147,243 @@
         <main class="container">
             <div
                 style="
-                    height: 50dvh;
+                    padding: 20px 0 0 0;
                     display: flex;
                     justify-content: center;
                     flex-direction: column;
                 "
             >
-                <h1 class="title-principal" style="font-weight: 400">
+                <h1
+                    class="title-principal"
+                    style="font-weight: 400"
+                    data-lang-pt="Sobre a api"
+                    data-lang-en="
+                About the api"
+                >
                     Sobre a api
                 </h1>
-                <p class="p-big">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Corporis fugiat, soluta expedita repellat id perferendis
-                    asperiores aperiam. Rem reiciendis maxime optio eaque
-                    dignissimos neque, corrupti numquam. Libero ex excepturi
-                    rem.
+                <p
+                    class="p-big"
+                    data-lang-en="A practical and efficient solution for managing customer orders automatically within a system. This API can be used to create, update, retrieve, and manage order information, offering flexibility for integration with various platforms, such as mobile applications, e-commerce systems, or administrative dashboards."
+                    data-lang-pt="Uma solução prática e eficiente para gerenciar pedidos de
+                clientes de forma automatizada em um sistema. Essa API pode
+                ser usada para criar, atualizar, consultar e gerenciar
+                informações sobre encomendas, oferecendo flexibilidade para
+                integração com diferentes plataformas, como aplicativos
+                móveis, sistemas de e-commerce ou dashboards
+                administrativos."
+                >
+                    Uma solução prática e eficiente para gerenciar pedidos de
+                    clientes de forma automatizada em um sistema. Essa API pode
+                    ser usada para criar, atualizar, consultar e gerenciar
+                    informações sobre encomendas, oferecendo flexibilidade para
+                    integração com diferentes plataformas, como aplicativos
+                    móveis, sistemas de e-commerce ou dashboards
+                    administrativos.
                 </p>
             </div>
-            <article style="display: flex; padding: 0 0 50px 0">
-                <div>
-                    <h2>Exemplos</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Fuga odio consequuntur, corrupti sint quibusdam sed
-                        neque ad eligendi quidem molestias architecto illum
-                        iste, dignissimos nesciunt explicabo molestiae dolorum
-                        omnis beatae?
-                    </p>
+            <article style="display: flex; padding: 12px 0 50px 0">
+                <div class="div-about">
+                    <h2
+                        data-lang-en="
+                    API provides endpoints for"
+                        data-lang-pt="API fornece endpoints para"
+                    >
+                        API fornece endpoints para
+                    </h2>
+                    <ul class="common-ul">
+                        <li>
+                            <strong
+                                data-lang-pt="Criar encomendas:"
+                                data-lang-en="Create orders:"
+                                >Criar encomendas:</strong
+                            >
+                            <span
+                                data-lang-en="Allows new orders to be registered with details such as customer, product, quantity, price, and status."
+                                data-lang-pt="Permite que novos pedidos sejam registrados com
+                            detalhes como cliente, produto, quantidade,
+                            preço e status."
+                            >
+                                Permite que novos pedidos sejam registrados com
+                                detalhes como cliente, produto, quantidade,
+                                preço e status.
+                            </span>
+                        </li>
+                        <li>
+                            <strong
+                                data-lang-en="Update status:"
+                                data-lang-pt="Atualizar status:"
+                                >Atualizar status:</strong
+                            >
+                            <span
+                                data-lang-en='Provides the ability to change the order status, such as "Processing," "Shipped," or "Delivered.'
+                                data-lang-pt='Oferece a possibilidade de alterar o status da
+                                encomenda, como "Processando", "Enviado" ou
+                                "Entregue".'
+                            >
+                                Oferece a possibilidade de alterar o status da
+                                encomenda, como "Processando", "Enviado" ou
+                                "Entregue".
+                            </span>
+                        </li>
+                        <li>
+                            <strong
+                                data-lang-en="Retrieve orders:"
+                                data-lang-pt="Consultar pedidos:"
+                                >Consultar pedidos:</strong
+                            >
+                            <span
+                                data-lang-pt="Retorna uma lista de encomendas com filtros
+                            opcionais, como cliente, status ou período."
+                                data-lang-en="Returns a list of orders with optional filters, such as customer, status, or date range."
+                            >
+                                Retorna uma lista de encomendas com filtros
+                                opcionais, como cliente, status ou período.
+                            </span>
+                        </li>
+                        <li>
+                            <strong
+                                data-lang-pt="Excluir ou cancelar encomendas:"
+                                data-lang-en="Delete or cancel orders:"
+                                >Excluir ou cancelar encomendas:</strong
+                            >
+                            <span
+                                data-lang-pt="Gerencia cancelamentos ou exclusões de forma segura."
+                                data-lang-en="Manages cancellations or deletions securely."
+                                >Gerencia cancelamentos ou exclusões de forma
+                                segura.</span
+                            >
+                        </li>
+                    </ul>
                 </div>
                 <div>
-                    <h2>Como usar</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Fuga odio consequuntur, corrupti sint quibusdam sed
-                        neque ad eligendi quidem molestias architecto illum
-                        iste, dignissimos nesciunt explicabo molestiae dolorum
-                        omnis beatae?
-                    </p>
+                    <h2
+                        data-lang-en="
+                    How to use"
+                        data-lang-pt="Como usar"
+                    >
+                        Como usar
+                    </h2>
+                    <ul class="common-ul">
+                        <li>
+                            <strong>GET /api/orders/ –</strong>
+                            <span
+                                data-lang-pt="Liste todas as
+                            encomendas ou filtre por status, cliente, ou
+                            intervalo de datas."
+                                data-lang-en="
+                                List all orders or filter by status, customer, or data range."
+                            >
+                                Liste todas as encomendas ou filtre por status,
+                                cliente, ou intervalo de datas.</span
+                            >
+                        </li>
+                        <li>
+                            <strong>POST /api/orders/ –</strong>
+                            <span
+                                data-lang-pt="Crie uma nova
+                            encomenda enviando os dados no corpo da requisição
+                            (em JSON)."
+                                data-lang-en="Create a new
+                                order by sending the data in the body of the request
+                                (in JSON)."
+                            >
+                                Crie uma nova encomenda enviando os dados no
+                                corpo da requisição (em JSON).</span
+                            >
+                        </li>
+                        <li>
+                            <strong>PUT /api/order/{id}/ –</strong>
+                            <span
+                                data-lang-pt="Atualize os detalhes ou o status de uma encomenda existente."
+                                data-lang-en="Update the details or status of an existing order."
+                            >
+                                Atualize os detalhes ou o status de uma
+                                encomenda existente.
+                            </span>
+                        </li>
+                        <li>
+                            <strong>DELETE /api/order/{id}/ –</strong>
+                            <span
+                                data-lang-pt="Exclua ou cancele uma encomenda específica."
+                                data-lang-en="Delete or cancel a specific order."
+                            >
+                                Exclua ou cancele uma encomenda específica.
+                            </span>
+                        </li>
+                    </ul>
                 </div>
             </article>
-            <h1>URLS DISPONIVEIS API</h1>
-            <ul>
+            <h1
+                data-lang-en="
+            SERVICES AVAILABLE API"
+                data-lang-pt="SERVIÇOS DISPONIVEIS API"
+            >
+                SERVIÇOS DISPONIVEIS API
+            </h1>
+            <ul class="special-a">
                 <li>
-                    Encomendas GET:
-                    <a href="/api/orders/">http://127.0.0.1:8000/api/orders</a>
+                    <span data-lang-pt="Encomendas:" data-lang-en="Orders:"
+                        >Encomendas:</span
+                    >
+                    <a href="/api/orders/"
+                        ><span>GET</span> http://127.0.0.1:8000/api/orders</a
+                    >
                 </li>
                 <li>
-                    Limite encomendas GET:
+                    <span
+                        data-lang-pt="Limite encomendas:"
+                        data-lang-en="Order limit:"
+                        >Limite encomendas:</span
+                    >
                     <a href="/api/orders/?q=5"
-                        >http://127.0.0.1:8000/api/orders/?q=5</a
+                        ><span>GET</span>
+                        http://127.0.0.1:8000/api/orders/?q={number}</a
                     >
                 </li>
             </ul>
             <hr />
-            <h1>GERENCIAR URLS DISPONIVEIS API</h1>
-            <ul>
+            <h1
+                data-lang-en="MANAGE AVAILABLE API URLS"
+                data-lang-pt="GERENCIAR URLS DISPONIVEIS API"
+            >
+                GERENCIAR URLS DISPONIVEIS API
+            </h1>
+            <ul class="special-a">
                 <li>
-                    Adicionar encomenda POST:
-                    <a href="#">http://127.0.0.1:8000/api/orders</a>
+                    <span
+                        data-lang-pt="Adicionar encomenda:"
+                        data-lang-en="Add order:"
+                        >Adicionar encomenda:</span
+                    >
+                    <a href="#"
+                        ><span style="background-color: rgb(142, 102, 29)"
+                            >POST</span
+                        >
+                        http://127.0.0.1:8000/api/orders</a
+                    >
                 </li>
                 <li>
-                    Update encomenda PUT:
-                    <a href="#">http://127.0.0.1:8000/api/order/1</a>
+                    <span
+                        data-lang-en="Update order:"
+                        data-lang-pt="Update encomenda:"
+                        >Update encomenda:</span
+                    >
+                    <a href="#"
+                        ><span>PUT</span>
+                        http://127.0.0.1:8000/api/order/{id}</a
+                    >
                 </li>
                 <li>
-                    Excluir encomenda DELETE:
-                    <a href="">http://127.0.0.1:8000/api/order/1</a>
+                    <span
+                        data-lang-pt="Excluir encomenda:"
+                        data-lang-en="Delete order"
+                        >Excluir encomenda:</span
+                    >
+                    <a href=""
+                        ><span>DELETE</span>
+                        http://127.0.0.1:8000/api/order/{id}</a
+                    >
                 </li>
             </ul>
         </main>
