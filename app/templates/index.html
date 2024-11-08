@@ -273,7 +273,7 @@
                     <div
                         onclick='copy("{{request.scheme}}://{{request.get_host}}/api/orders")'
                     >
-                        <span style="background-color: rgb(142, 102, 29)"
+                        <span style="background-color: #B8860B"
                             >POST</span
                         >
                         {{request.scheme}}://{{request.get_host}}/api/orders
@@ -288,7 +288,7 @@
                     <div
                         onclick='copy("{{request.scheme}}://{{request.get_host}}/api/order/{id}")'
                     >
-                        <span style="background-color: rgb(0, 153, 153)"
+                        <span style="background-color: #003366"
                             >PUT</span
                         >
                         {{request.scheme}}://{{request.get_host}}/api/order/{id}
@@ -303,7 +303,7 @@
                     <div
                         onclick='copy("{{request.scheme}}://{{request.get_host}}/api/order/{id}")'
                     >
-                        <span style="background-color: red">DELETE</span>
+                        <span style="background-color: #D32F2F">DELETE</span>
                         {{request.scheme}}://{{request.get_host}}/api/order/{id}
                     </div>
                 </li>
@@ -311,12 +311,12 @@
         </main>
         <footer class="container" style="height: 200px">
             <div style="text-align: center; width: 100%">
+                <div>
+                    <img src="{% static "svg/icon.svg" %}" alt="img-logo" width="80" />
+                </div>
                 <h1 data-lang-en="API Docs" data-lang-pt="Documentação API">
                     Documentação API
                 </h1>
-                <div>
-                    <img src="{% static "svg/icon.svg" %}" alt="img-logo" width="100" />
-                </div>
             </div>
         </footer>
         <div

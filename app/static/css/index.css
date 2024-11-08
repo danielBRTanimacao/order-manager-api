@@ -5,16 +5,16 @@
     margin: 0;
     padding: 0;
 }
-ul {
-    list-style: none;
-}
+
 body {
-    background-color: rgb(11, 11, 96);
+    background-color: #002147;
 }
+
 main {
     background-color: white;
     padding: 0 20px 20px 20px !important;
 }
+
 header,
 nav,
 footer {
@@ -29,17 +29,30 @@ footer {
     height: 12dvh;
     justify-content: space-between;
 }
+
 nav a {
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 800;
     color: white;
 }
+
 hr {
     margin: 20px;
 }
+
+ul {
+    list-style: none;
+}
+
 li {
     padding: 15px 0 0 0;
+}
+
+select {
+    border: none;
+    padding: 6px;
+    border-radius: 5px;
 }
 
 .container {
@@ -75,7 +88,7 @@ li {
     display: flex;
 }
 .special-a li div {
-    background-color: rgb(182, 182, 182);
+    background-color: #d3d3d3;
     margin-left: 5px;
     padding: 4px 6px;
     border-radius: 5px;
@@ -83,13 +96,13 @@ li {
 }
 
 .special-a li div:hover {
-    background-color: gray;
+    background-color: #a9a9a9;
     cursor: pointer;
 }
 
 .special-a li div span {
     font-weight: 600;
-    background-color: rgb(11, 94, 11);
+    background-color: #0b3d2e;
     padding: 0 4px;
     color: white;
     border-radius: 5px;
