@@ -16,8 +16,8 @@
                 background-color: rgb(11, 11, 96);
             }
             main {
-                height: 100dvh;
                 background-color: white;
+                padding: 0 20px 20px 20px !important;
             }
             header,
             nav,
@@ -38,6 +38,12 @@
                 font-size: 1.5rem;
                 font-weight: 800;
                 color: white;
+            }
+            hr {
+                margin: 20px;
+            }
+            li {
+                padding: 8px 0 0 0;
             }
             .container {
                 padding: 0 20px;
@@ -60,15 +66,13 @@
                 .img-principal {
                     width: 300px;
                 }
-            }
-            @media (max-width: 767.98px) {
-                .img-principal {
-                    width: 200px;
+                header {
+                    flex-direction: column;
                 }
             }
-            @media (max-width: 575.98px) {
-                .img-principal {
-                    width: 100px;
+            @media (max-width: 767.98px) {
+                .title-principal {
+                    font-size: 2rem;
                 }
             }
         </style>
@@ -77,7 +81,18 @@
     <body>
         <nav class="container">
             <a href="/">API</a>
-            <div id="google_translate_element"></div>
+            <select name="choose" id="changeLanguage">
+                <option
+                    data-lang-pt="Português"
+                    data-lang-en="Portuguese"
+                    value="pt"
+                >
+                    Português
+                </option>
+                <option value="en" data-lang-pt="Inglês" data-lang-en="English">
+                    Inglês
+                </option>
+            </select>
         </nav>
         <header>
             <div>
@@ -112,7 +127,7 @@
                     rem.
                 </p>
             </div>
-            <article style="display: flex">
+            <article style="display: flex; padding: 0 0 50px 0">
                 <div>
                     <h2>Exemplos</h2>
                     <p>
@@ -147,6 +162,7 @@
                     >
                 </li>
             </ul>
+            <hr />
             <h1>GERENCIAR URLS DISPONIVEIS API</h1>
             <ul>
                 <li>
@@ -164,17 +180,20 @@
             </ul>
         </main>
         <footer class="container">footer</footer>
-        <script type="text/javascript">
-            function googleTranslateElementInit() {
-                new google.translate.TranslateElement(
-                    { pageLanguage: "en" },
-                    "google_translate_element"
-                );
-            }
+        <script>
+            const languageSelect = document.getElementById("changeLanguage");
+
+            languageSelect.addEventListener("change", (event) => {
+                const selectedLanguage = event.target.value;
+
+                document
+                    .querySelectorAll("[data-lang-pt]")
+                    .forEach((element) => {
+                        element.textContent = element.getAttribute(
+                            `data-lang-${selectedLanguage}`
+                        );
+                    });
+            });
         </script>
-        <script
-            type="text/javascript"
-            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-        ></script>
     </body>
 </html>
