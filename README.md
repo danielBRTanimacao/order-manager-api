@@ -2,7 +2,7 @@
 
 <img src="./img-project/img-project.png" alt="img-project" />
 
-> Lorem
+> Essa API pode ser usada para criar, atualizar, consultar e gerenciar informações sobre encomendas, oferecendo flexibilidade para integração com diferentes plataformas, como aplicativos móveis, sistemas de e-commerce ou dashboards administrativos.
 
 ## Requisitos 💻
 

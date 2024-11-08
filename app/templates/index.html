@@ -76,6 +76,7 @@
                 text-decoration: none;
             }
             .special-a li a span {
+                font-weight: 600;
                 background-color: rgb(11, 94, 11);
                 padding: 0 4px;
                 color: white;
@@ -370,7 +371,9 @@
                         >Update encomenda:</span
                     >
                     <a href="#"
-                        ><span>PUT</span>
+                        ><span style="background-color: rgb(0, 153, 153)"
+                            >PUT</span
+                        >
                         http://127.0.0.1:8000/api/order/{id}</a
                     >
                 </li>
@@ -381,13 +384,22 @@
                         >Excluir encomenda:</span
                     >
                     <a href=""
-                        ><span>DELETE</span>
+                        ><span style="background-color: red">DELETE</span>
                         http://127.0.0.1:8000/api/order/{id}</a
                     >
                 </li>
             </ul>
         </main>
-        <footer class="container">footer</footer>
+        <footer class="container" style="height: 200px">
+            <div style="text-align: center; width: 100%">
+                <h1 data-lang-en="API Docs" data-lang-pt="Documentação API">
+                    Documentação API
+                </h1>
+                <div>
+                    <img src="aoba" alt="img-logo" />
+                </div>
+            </div>
+        </footer>
         <script>
             const languageSelect = document.getElementById("changeLanguage");
 
