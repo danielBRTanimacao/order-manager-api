@@ -1,25 +1,30 @@
 from ninja import Router
 from .schemas import OrderSchema
 from .models import Order
-from typing import List, Optional
+from typing import Optional
 
 orders_router = Router()
 
-@orders_router.get('/', response={200: List[OrderSchema]})
+@orders_router.get('/', response={200: list, 400: dict})
 def index(request, q: Optional[int] = None):
     orders = Order.objects.all()
     if q is not None: 
-        # if q < 0:
-        #     return [OrderSchema] erro aqui
+        if q < 0:
+            return [{
+                "title": "Value Error",
+                "status": 400,
+                "detail": "O valor 'q' nao pode ser negativo!"
+            }]
         orders = orders[:q]
-    return [OrderSchema.from_orm(order) for order in orders]
 
-@orders_router.post('/', response={201: List[OrderSchema]})
-def create(request, order: OrderSchema):
-    if request.user.is_authenticated:
-        return order
-    return {
-        "title": "Raise error authentication",
-        "ResponseStatus": 401,
-        "detail": "Erro: Não autorizado usuario não autenticado!"
-    }
+    return [OrderSchema.from_orm(order).dict() for order in orders]
+
+@orders_router.post('/', response={200: dict, 401: dict})
+def create(request, order_schema: OrderSchema):
+    order = Order(order_schema)
+    return order
+    # return {
+    #     "title": "Authentication Error",
+    #     "status": 401,
+    #     "detail": "usuario nao autenticado permissao negada!"
+    # }

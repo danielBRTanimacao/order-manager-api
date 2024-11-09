@@ -1,12 +1,8 @@
-from ninja import Schema
-from datetime import datetime
+from ninja import ModelSchema
+from .models import Order
 
-class OrderSchema(Schema):
-    id: int
-    client: str
-    product: str
-    amount: int
-    total_price: float
-    status: str
-    date: datetime
+class OrderSchema(ModelSchema):
+    class Meta:
+        model = Order
+        exclude = "id", "date",
     
