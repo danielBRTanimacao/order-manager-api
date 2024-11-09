@@ -243,6 +243,17 @@
                     </div>
                 </li>
                 <li>
+                    <span data-lang-pt="Encomenda especifica:" data-lang-en="Specific order:"
+                        >Encomenda especifica:</span
+                    >
+                    <div
+                        onclick='copy("{{request.scheme}}://{{request.get_host}}/api/orders/{id}")'
+                    >
+                        <span>GET</span>
+                        {{request.scheme}}://{{request.get_host}}/api/orders/{id}
+                    </div>
+                </li>
+                <li>
                     <span
                         data-lang-pt="Limite encomendas:"
                         data-lang-en="Order limit:"
