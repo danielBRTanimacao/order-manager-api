@@ -1,6 +1,6 @@
 # Gerente de encomendas📦
 
-<img src="./img-project/img-project.png" alt="img-project" />
+<img src="./app/static/img/img-project.png" alt="img-project" />
 
 > Essa API pode ser usada para criar, atualizar, consultar e gerenciar informações sobre encomendas, oferecendo flexibilidade para integração com diferentes plataformas, como aplicativos móveis, sistemas de e-commerce ou dashboards administrativos.
 
@@ -24,9 +24,9 @@ As principais tecnologias e ferramentas utilizadas neste projeto são:
 Windows, Linux e macOS
 
 ```
-git clone lorem
+git clone https://github.com/danielBRTanimacao/order-manager-api.git
 
-cd lorem
+cd order-manager-api
 ```
 
 ### Contato 📞

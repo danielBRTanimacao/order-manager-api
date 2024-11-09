@@ -26,7 +26,7 @@ def specific_order(request, id: int):
 @orders_router.post('/', response={200: dict})
 def create(request, order_schema: OrderPostSchema):
     if request.user.is_anonymous:
-        return raise_detail_message("Authentication", 400, "Nao tem permissao")
+        return raise_detail_message("Authentication", 401, "Nao tem permissao")
     new_order = Order(**order_schema.dict())
     new_order.save()
     return raise_detail_message("Created success", 201, "Encomenda criada com sucesso")
@@ -34,7 +34,7 @@ def create(request, order_schema: OrderPostSchema):
 @orders_unique_router.delete('/{id}')
 def delete(request, id: int):
     if request.user.is_anonymous:
-        return raise_detail_message("Authentication", 400, "Nao tem permissao")
+        return raise_detail_message("Authentication", 401, "Nao tem permissao")
     delete_order = get_object_or_404(Order, id=id)
     delete_order.delete()
     return raise_detail_message("Order deleted", 200, "Objeto deletado com sucesso")
