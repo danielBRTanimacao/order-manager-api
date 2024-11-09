@@ -17,7 +17,9 @@ Antes de clonar o projeto e recomendado você ter os seguintes requisitos:
 
 As principais tecnologias e ferramentas utilizadas neste projeto são:
 
--   `lorem`: lorem.
+-   `Python`: Uma linguagem de programação de alto nível, versátil e amplamente utilizada, conhecida por sua sintaxe simples e legibilidade. Criada por Guido van Rossum em 1991, ela foi projetada com a filosofia de tornar a programação acessível e eficiente, permitindo que os desenvolvedores se concentrem mais na lógica do problema do que nos detalhes técnicos.
+-   `Django`: Projetado para facilitar o desenvolvimento de aplicações web robustas, seguras e escaláveis. Ele segue o padrão MVC (Model-View-Controller), embora em Django seja frequentemente chamado de MTV (Model-Template-View), devido à terminologia específica do framework.
+-   `Django-Ninja`: Um framework leve e rápido para criar APIs usando o Django. Ele é construído sobre o Pydantic e utiliza os recursos modernos do Python, como type hints, para simplificar o desenvolvimento de APIs REST, com foco em desempenho, simplicidade e produtividade.
 
 ## Como instalar 🚀
 
@@ -27,6 +29,12 @@ Windows, Linux e macOS
 git clone https://github.com/danielBRTanimacao/order-manager-api.git
 
 cd order-manager-api
+
+python -m venv venv
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
 ```
 
 ### Contato 📞
