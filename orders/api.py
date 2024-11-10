@@ -39,7 +39,12 @@ def delete(request, id: int):
     delete_order.delete()
     return raise_detail_message("Order deleted", 200, "Objeto deletado com sucesso")
 
-# @orders_unique_router.put('/{id}')
-# def delete(request, id: int):
-#     return raise_detail_message("Order deleted", 200, "Objeto deletado com sucesso")
+@orders_unique_router.put('/{id}')
+def update(request, id: int, order_schema: OrderPostSchema):
+    order_unique = get_object_or_404(Order, id=id)
+    for attr, value in order_schema.dict().items():
+        setattr(order_unique, attr, value)
+    order_unique.save()
+    
+    return raise_detail_message("Order update", 200, "Objeto modificado com sucesso")
 
