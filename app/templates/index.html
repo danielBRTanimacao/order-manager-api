@@ -266,6 +266,19 @@
                         {{request.scheme}}://{{request.get_host}}/api/orders/?q={number}
                     </div>
                 </li>
+                <li>
+                    <span
+                        data-lang-pt="Filtrar encomendas:"
+                        data-lang-en="Order filter:"
+                        >Filtrar encomendas:</span
+                    >
+                    <div
+                        onclick='copy("{{request.scheme}}://{{request.get_host}}/api/orders/filter")'
+                    >
+                        <span>GET</span>
+                        {{request.scheme}}://{{request.get_host}}/api/orders/filter?{filter}
+                    </div>
+                </li>
             </ul>
             <hr />
             <h1

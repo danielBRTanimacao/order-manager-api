@@ -22,18 +22,13 @@ def list_orders(request, q: Optional[int] = None):
 @orders_router.get('/filter', response={200: list[OrderGetSchema]})
 def filter_list(
     request, 
-    client: Optional[str], 
+    name: Optional[str], 
     status: Optional[str],
     product: Optional[str],
     amount: Optional[int], 
-    price: Optional[float], 
+    price: Optional[float]
 ):
     orders_filter = Order.objects.all()
-
-    if client:
-        orders = orders.filter(client__icontains=client)
-    if status:
-        orders = orders.filter(status=status)
 
     return orders_filter
 
