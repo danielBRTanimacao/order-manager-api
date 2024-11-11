@@ -19,6 +19,25 @@ def list_orders(request, q: Optional[int] = None):
         orders = orders[:q]
     return [OrderGetSchema.from_orm(order).dict() for order in orders]
 
+@orders_router.get('/filter', response={200: list[OrderGetSchema]})
+def filter_list(
+    request, 
+    client: Optional[str], 
+    status: Optional[str],
+    product: Optional[str],
+    amount: Optional[int], 
+    price: Optional[float], 
+):
+    orders_filter = Order.objects.all()
+
+    if client:
+        orders = orders.filter(client__icontains=client)
+    if status:
+        orders = orders.filter(status=status)
+
+    return orders_filter
+
+
 @orders_router.get('/{id}', response={200: dict, 400: dict})
 def specific_order(request, id: int):
     try:

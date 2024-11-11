@@ -4,13 +4,13 @@ from random import randint
 from pathlib import Path
 from random import choice
 
-from list_products import products, values_products # listas para ser adicionada
+from list_products import products, values_products
  
 import django
 from django.conf import settings
 
 DJANGO_BASE_DIR = Path(__file__).parent.parent
-NUMBER_OF_OBJECTS = 100 # numero de objetos ser criado
+NUMBER_OF_OBJECTS = 100
 
 sys.path.append(str(DJANGO_BASE_DIR))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'core.settings' # substitua o 'core' base do projeto pode ser modificado
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     Order.objects.all().delete()
 
     fake = faker.Faker('pt_BR')
-    STATUS_CHOICE = ['WAI', 'PRO', 'SHI', 'DEL', 'CAN'] # status disponiveis
+    STATUS_CHOICE = ['Aguardando', 'Processando', 'Enviado', 'Entregue', 'Cancelado'] # status disponiveis
     django_order = []
 
     for indc in range(NUMBER_OF_OBJECTS):

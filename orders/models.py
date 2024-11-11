@@ -7,18 +7,18 @@ class Order(models.Model):
         verbose_name_plural = 'Orders'
 
     STATUS_CHOICES = [
-        ('WAI', 'Aguardando pagamento'),
-        ('PRO', 'Processando'),
-        ('SHI', 'Enviado'),
-        ('DEL', 'Entregue'),
-        ('CAN', 'Cancelado'),
+        ('Aguardando', 'Aguardando pagamento'),
+        ('Processando', 'Processando'),
+        ('Enviado', 'Enviado'),
+        ('Entregue', 'Entregue'),
+        ('Cancelado', 'Cancelado'),
     ]
 
-    client = models.CharField(max_length=100) # possivel uso de foreign key aqui Clients
-    product = models.CharField(max_length=100) # possivel uso de foreign key aqui Products
+    client = models.CharField(max_length=100)
+    product = models.CharField(max_length=100)
     amount = models.BigIntegerField(default=0)
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='WAI')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Aguardando')
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
