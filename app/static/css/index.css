@@ -8,6 +8,7 @@
     line-height: 1.5;
     margin: 0;
     padding: 0;
+    --darknes-bg: #030a2f;
     --dark-bg: #002147;
     --light-white: white;
 }
@@ -21,11 +22,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: var(--dark-bg);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--darknes-bg);
 }
 
 body {
@@ -196,5 +197,8 @@ p {
 @media (max-width: 767.98px) {
     .title-principal {
         font-size: 2rem;
+    }
+    .special-a li {
+        display: block;
     }
 }
