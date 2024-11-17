@@ -175,6 +175,11 @@ p {
     padding: 12px 0 50px 0;
 }
 
+.footer-div {
+    text-align: center;
+    width: 100%;
+}
+
 @media (max-width: 1199.98px) {
     .img-principal {
         width: 400px;
@@ -200,5 +205,8 @@ p {
     }
     .special-a li {
         display: block;
+    }
+    .footer-div {
+        padding-top: 20px;
     }
 }
