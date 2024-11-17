@@ -56,6 +56,8 @@ def specific_order(request, id: int):
 def create(request, order_schema: OrderPostSchema):
     if request.user.is_anonymous:
         return raise_detail_message("Authentication", 401, "Nao tem permissao")
+    if Order.objects.filter(**order_schema.dict()).exists():
+        return raise_detail_message("Conflict", 409, "Ja registrado!")
     new_order = Order(**order_schema.dict())
     new_order.save()
     return raise_detail_message("Created success", 201, "Encomenda criada com sucesso")
@@ -76,4 +78,3 @@ def update(request, id: int, order_schema: OrderPostSchema):
     order_unique.save()
 
     return raise_detail_message("Order update", 200, "Objeto modificado com sucesso")
-

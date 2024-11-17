@@ -13,7 +13,7 @@ DJANGO_BASE_DIR = Path(__file__).parent.parent
 NUMBER_OF_OBJECTS = 100
 
 sys.path.append(str(DJANGO_BASE_DIR))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'core.settings' # substitua o 'core' base do projeto pode ser modificado
+os.environ['DJANGO_SETTINGS_MODULE'] = 'core.settings' # substitua o 'core' se sua base do projeto tiver outro nome
 settings.USE_TZ = False
 
 django.setup()
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     Order.objects.all().delete()
 
     fake = faker.Faker('pt_BR')
-    STATUS_CHOICE = ['Aguardando', 'Processando', 'Enviado', 'Entregue', 'Cancelado'] # status disponiveis
+    STATUS_CHOICE = ['Aguardando', 'Processando', 'Enviado', 'Entregue', 'Cancelado'] # status disponiveis pode ser removido ou modificado
     django_order = []
 
     for indc in range(NUMBER_OF_OBJECTS):
